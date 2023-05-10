@@ -1,0 +1,38 @@
+/* GENERAL */
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+/* HEADER */
+header {
+  height: 60px;
+  border-bottom: 1px solid lightgray;
+  border: 2px solid red;
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* MAIN */
+main {
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid green; */
+}
+/* FOOTER */
+footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid blue;
+}
