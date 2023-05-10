@@ -1,0 +1,32 @@
+/* HEADER */
+header {
+  height: 100px;
+  border-bottom: 1px solid lightgray;
+  // border: 2px solid red;
+  color: white;
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .link {
+    all: unset;
+    cursor: pointer;
+    img {
+      height: auto;
+      width: 150px;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    font-size: xx-large;
+    cursor: pointer;
+  }
+}

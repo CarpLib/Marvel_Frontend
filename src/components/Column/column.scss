@@ -1,0 +1,48 @@
+.column {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+    transform: rotate(-90deg);
+  }
+
+  .title {
+    font-size: 1.5rem;
+    transform: "rotate(-90deg)";
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 50px;
+    height: 100%;
+    font-size: 20px;
+
+    .pictures {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      img {
+        width: 150px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .bold-txt {
+      font-weight: bold;
+      color: black;
+      font-size: 1.7rem;
+    }
+
+    p:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
