@@ -68,7 +68,12 @@ function App() {
               <Signup infosUser={infosUser} setInfosUser={setInfosUser} />
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={
+              <Login infosUser={infosUser} setInfosUser={setInfosUser} />
+            }
+          />
           <Route path="/characters" element={<Characters />} />
           <Route
             path="/comics"
