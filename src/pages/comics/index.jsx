@@ -3,7 +3,7 @@ import "./comics.scss";
 import axios from "axios";
 import Card from "../../components/Card_Comics";
 
-export default function Index({ dataCommics }) {
+export default function Index({ dataCommics, setDataCommics }) {
   const [data, setData] = useState([]);
 
   const handleChange = (event) => {
@@ -15,6 +15,7 @@ export default function Index({ dataCommics }) {
         // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
       );
       setData(response.data);
+      setDataCommics(data);
     };
     fetchData();
   };

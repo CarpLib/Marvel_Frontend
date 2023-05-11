@@ -77,7 +77,12 @@ function App() {
           <Route path="/characters" element={<Characters />} />
           <Route
             path="/comics"
-            element={<Comics dataCommics={dataCommics} />}
+            element={
+              <Comics
+                dataCommics={dataCommics}
+                setDataCommics={setDataCommics}
+              />
+            }
           />
           <Route path="/favorites" element={<Favorites />} />
           <Route
