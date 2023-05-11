@@ -6,11 +6,11 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
-import Home from "./pages/Home/index";
-import Characters from "./pages/Characters/index";
-import Comics from "./pages/Comics/index";
+import Home from "./pages/home/index";
+import Characters from "./pages/characters/index";
+import Comics from "./pages/comics/index";
 import Favorites from "./pages/Favorites/index";
-import Character from "./pages/Character/index";
+import Character from "./pages/character/index";
 
 // FontAwasome
 import { library } from "@fortawesome/fontawesome-svg-core";
