@@ -1,3 +1,30 @@
 .character {
   color: white;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .character-img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+  }
+
+  .character-description {
+    font-size: 30px;
+  }
+}
+
+.loader,
+.character {
+  height: calc(100vh - 100px - 10vh);
+  display: flex;
+  flex-direction: column;
 }

@@ -20,9 +20,23 @@ import {
   faListAlt,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
 library.add(faEnvelope, faKey, faListAlt, faThumbsUp);
 
 function App() {
+  const [dataCommics, setDataCommics] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios(
+        "http://site--marvel--m4zrv4ywn86q.code.run/comics"
+      );
+      setDataCommics(response.data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <Router>
@@ -30,9 +44,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
-          <Route path="/comics" element={<Comics />} />
+          <Route
+            path="/comics"
+            element={<Comics dataCommics={dataCommics} />}
+          />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="/character/:id" element={<Character />} />
+          <Route
+            path="/character/:id"
+            element={<Character dataCommics={dataCommics} />}
+          />
         </Routes>
         <Footer />
       </Router>

@@ -1,3 +1,10 @@
 .comics {
   color: white;
 }
+
+.loader,
+.comics {
+  height: calc(100vh - 100px - 10vh);
+  display: flex;
+  flex-direction: column;
+}
