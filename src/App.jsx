@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(
-        "http://site--marvel--m4zrv4ywn86q.code.run/comics"
+        "https://site--marvel--m4zrv4ywn86q.code.run/comics"
       );
       setDataCommics(response.data);
     };

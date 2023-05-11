@@ -12,7 +12,7 @@ export default function Index({ dataCommics }) {
     try {
       const fetchData = async () => {
         const response = await axios.get(
-          "http://site--marvel--m4zrv4ywn86q.code.run/characters"
+          "https://site--marvel--m4zrv4ywn86q.code.run/characters"
         );
         console.log(response.data);
         setData(response.data);

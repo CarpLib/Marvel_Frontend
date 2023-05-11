@@ -15,7 +15,7 @@ export default function Index({ dataCommics }) {
     try {
       const fetchData = async () => {
         const response = await axios.get(
-          `http://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
+          `https://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
         );
         // console.log(response.data);
         setData(response.data);
@@ -36,7 +36,7 @@ export default function Index({ dataCommics }) {
       <h1>{data.name}</h1>
       <div className="character-img">
         {data.thumbnail.path !==
-          "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
+          "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
           <img
             src={`${data.thumbnail.path}/standard_fantastic.${data.thumbnail.extension}`}
             alt={data.name}
