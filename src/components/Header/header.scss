@@ -2,7 +2,6 @@
 header {
   height: 100px;
   border-bottom: 1px solid lightgray;
-  // border: 2px solid red;
   color: white;
   box-sizing: border-box;
 }
@@ -29,5 +28,62 @@ header .container {
     width: 400px;
     font-size: xx-large;
     cursor: pointer;
+  }
+
+  .signUp-login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 280px;
+    font-size: xx-large;
+    cursor: pointer;
+
+    .btn-1 {
+      all: unset;
+      background-color: white;
+      color: black;
+      padding: 5px;
+      border-radius: 5px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: red;
+      }
+    }
+    .btn-2 {
+      all: unset;
+      background-color: white;
+      color: black;
+      padding: 5px;
+      border-radius: 5px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
+
+  .disconnected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: xx-large;
+    cursor: pointer;
+
+    .btn-2 {
+      all: unset;
+      background-color: red;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      font-weight: bold;
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
   }
 }

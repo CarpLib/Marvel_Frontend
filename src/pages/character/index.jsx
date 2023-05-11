@@ -9,13 +9,14 @@ export default function Index({ dataCommics }) {
   const [isLoading, setIsLoading] = useState(true);
   const id = useParams();
 
-  console.log("List Comics", dataCommics);
+  // console.log("List Comics", dataCommics);
 
   useEffect(() => {
     try {
       const fetchData = async () => {
         const response = await axios.get(
-          `https://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
+          `http://localhost:3000/character/${id.id}`
+          // `https://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
         );
         // console.log(response.data);
         setData(response.data);

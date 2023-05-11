@@ -1,0 +1,65 @@
+.card_comics {
+  height: 250px;
+  width: 250px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    border: 1px solid black;
+
+    h2 {
+      display: none;
+    }
+
+    .description {
+      display: none;
+    }
+  }
+
+  .search {
+    all: unset;
+    border-radius: 10px;
+    height: 50px;
+    width: 50%;
+    background-color: lightgray;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+  }
+
+  .block-description {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      background-color: white;
+      opacity: 0.8;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .description {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; /* nombre de lignes à afficher */
+      overflow: hidden;
+      background-color: white;
+      opacity: 0.8;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
+  }
+}
