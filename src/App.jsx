@@ -22,31 +22,18 @@ import {
   faListAlt,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+
 import Cookies from "js-cookie";
 library.add(faEnvelope, faKey, faListAlt, faThumbsUp);
 
 function App() {
-  const [dataComics, setDataComics] = useState([]);
   const [infosUser, setInfosUser] = useState({
     token: "",
     id: "",
     username: "",
     favoritesCharacters: [],
   });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios(
-        // "https://site--marvel--m4zrv4ywn86q.code.run/comics"
-        "http://localhost:3000/comics"
-      );
-      // console.log(response.data);
-      setDataComics(response.data);
-    };
-    fetchData();
-  }, []);
 
   const cookie = Cookies.get("Marvel");
   if (cookie && !infosUser.token) {
@@ -75,17 +62,9 @@ function App() {
             }
           />
           <Route path="/characters" element={<Characters />} />
-          <Route
-            path="/comics"
-            element={
-              <Comics dataComics={dataComics} setDataComics={setDataComics} />
-            }
-          />
+          <Route path="/comics" element={<Comics />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route
-            path="/character/:id"
-            element={<Character dataComics={dataComics} />}
-          />
+          <Route path="/character/:id" element={<Character />} />
         </Routes>
         <Footer />
       </Router>

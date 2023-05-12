@@ -1,3 +1,4 @@
+// Dépendances
 import { useEffect, useState } from "react";
 import "./character.scss";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -7,13 +8,14 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Index() {
-  const [data, setData] = useState([]);
-  const [dataComics, setDataComics] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isLoadingComics, setIsLoadingComics] = useState(true);
-  const id = useParams();
+  // State
+  const [data, setData] = useState([]); // État pour les données du personnage
+  const [dataComics, setDataComics] = useState([]); // État pour les données des comics
+  const [isLoading, setIsLoading] = useState(true); // État pour le chargement des données du personnage
+  const [isLoadingComics, setIsLoadingComics] = useState(true); // État pour le chargement des données des comics
+  const id = useParams(); // Extraction de l'ID à partir des paramètres de l'URL
 
-  // Carrousel
+  // Configuration du carrousel
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -40,21 +42,21 @@ export default function Index() {
 
   // console.log("List Comics", dataCommics);
 
+  // Récupération des données à partir de l'API lors du chargement du composant
   useEffect(() => {
     try {
       const fetchData = async () => {
+        // Récupération des données du personnage
         const response = await axios.get(
           `http://localhost:3000/character/${id.id}`
-          // `https://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
         );
-        // console.log(response.data);
         setData(response.data);
         setIsLoading(false);
+
+        // Récupération des données des comics liés au personnage
         const responseComics = await axios.get(
           `http://localhost:3000/comics/${response.data._id}`
-          // `https://site--marvel--m4zrv4ywn86q.code.run/comics/${response.data._id}`
         );
-        // console.log(responseComics.data);
         setDataComics(responseComics.data);
         setIsLoadingComics(false);
       };
@@ -62,15 +64,18 @@ export default function Index() {
     } catch (error) {
       console.log(error.message);
     }
-  }, [id.id]);
+  }, [id.id]); // Dépendance à l'ID pour relancer la récupération de données si l'ID change;
 
   // console.log(dataComics.comics);
 
+  // Affichage du composant
   return isLoading ? (
+    // Affichage du loader si les données du personnage sont en cours de chargement
     <div className="loader">
       <FadeLoader color="#36d7b7" />
     </div>
   ) : (
+    // Affichage des données du personnage si elles sont chargées
     <div className="character">
       <h1>{data.name}</h1>
       <div className="character-img">
@@ -85,11 +90,14 @@ export default function Index() {
       </div>
       <p className="character-description">{data.description}</p>
 
+      {/* Affichage du loader si les données des comics sont en cours de chargement */}
       {isLoadingComics ? (
         <div className="loader">
           <FadeLoader color="#36d7b7" />
         </div>
       ) : (
+        // Affichage des comics si les données sont chargées
+
         <Carousel
           responsive={responsive}
           className="carousel"
@@ -99,14 +107,17 @@ export default function Index() {
           removeArrowOnDeviceType={["tablet", "mobile"]}
         >
           {dataComics.comics.map((elem, index) => {
-            // console.log(elem);
+            console.log(elem.thumbnail.path);
             return (
-              <div key={index} className="character-comics">
-                <img
-                  src={`${elem.thumbnail.path}/portrait_incredible.${elem.thumbnail.extension}`}
-                  alt={elem.title}
-                />
-              </div>
+              elem.thumbnail.path !==
+                "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
+                <div key={index} className="character-comics">
+                  <img
+                    src={`${elem.thumbnail.path}/portrait_incredible.${elem.thumbnail.extension}`}
+                    alt={elem.title}
+                  />
+                </div>
+              )
             );
           })}
         </Carousel>
