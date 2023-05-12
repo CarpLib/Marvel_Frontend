@@ -107,7 +107,7 @@ export default function Index() {
           removeArrowOnDeviceType={["tablet", "mobile"]}
         >
           {dataComics.comics.map((elem, index) => {
-            console.log(elem.thumbnail.path);
+            // console.log(elem.thumbnail.path);
             return (
               elem.thumbnail.path !==
                 "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (

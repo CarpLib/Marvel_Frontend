@@ -17,7 +17,7 @@ export default function Index() {
         // "https://site--marvel--m4zrv4ywn86q.code.run/comics"
         "http://localhost:3000/comics"
       );
-      console.log(response.data.count);
+      // console.log(response.data.count);
       setCount(response.data.count);
       setDataComics(response.data.results);
     };
@@ -25,7 +25,7 @@ export default function Index() {
   }, []);
 
   const handlePageChange = (page) => {
-    console.log(page);
+    // console.log(page);
     const fetchData = async () => {
       const response = await axios(
         // `https://site--marvel--m4zrv4ywn86q.code.run/comics?skip=${
@@ -33,7 +33,7 @@ export default function Index() {
         // }`
         `http://localhost:3000/comics?skip=${page * 100 - 100}`
       );
-      console.log(response.data.results);
+      // console.log(response.data.results);
       setDataComics(response.data.results);
     };
     fetchData();
@@ -48,7 +48,7 @@ export default function Index() {
         `http://localhost:3000/comics?title=${value}`
         // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
       );
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
       setDataComics(data);
     };
@@ -72,6 +72,7 @@ export default function Index() {
           pageSize={100} // Remplacez 10 par le nombre d'éléments par page
           onChange={handlePageChange}
           className="pagination"
+          showTitle={false}
         />
       </div>
       <div className="comics-list">
