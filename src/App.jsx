@@ -28,12 +28,12 @@ import Cookies from "js-cookie";
 library.add(faEnvelope, faKey, faListAlt, faThumbsUp);
 
 function App() {
-  const [dataCommics, setDataCommics] = useState([]);
+  const [dataComics, setDataComics] = useState([]);
   const [infosUser, setInfosUser] = useState({
     token: "",
     id: "",
     username: "",
-    favorites: [],
+    favoritesCharacters: [],
   });
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function App() {
         "http://localhost:3000/comics"
       );
       // console.log(response.data);
-      setDataCommics(response.data);
+      setDataComics(response.data);
     };
     fetchData();
   }, []);
@@ -78,16 +78,13 @@ function App() {
           <Route
             path="/comics"
             element={
-              <Comics
-                dataCommics={dataCommics}
-                setDataCommics={setDataCommics}
-              />
+              <Comics dataComics={dataComics} setDataComics={setDataComics} />
             }
           />
           <Route path="/favorites" element={<Favorites />} />
           <Route
             path="/character/:id"
-            element={<Character dataCommics={dataCommics} />}
+            element={<Character dataComics={dataComics} />}
           />
         </Routes>
         <Footer />

@@ -3,7 +3,7 @@ import "./comics.scss";
 import axios from "axios";
 import Card from "../../components/Card_Comics";
 
-export default function Index({ dataCommics, setDataCommics }) {
+export default function Index({ dataComics, setDataComics }) {
   const [data, setData] = useState([]);
 
   const handleChange = (event) => {
@@ -15,7 +15,7 @@ export default function Index({ dataCommics, setDataCommics }) {
         // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
       );
       setData(response.data);
-      setDataCommics(data);
+      setDataComics(data);
     };
     fetchData();
   };
@@ -31,7 +31,7 @@ export default function Index({ dataCommics, setDataCommics }) {
         onChange={handleChange}
       />
       <div className="comics-list">
-        {dataCommics.map((comics) => {
+        {dataComics.map((comics) => {
           // console.log(comics.thumbnail.path);
           return comics.thumbnail.path !==
             "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (

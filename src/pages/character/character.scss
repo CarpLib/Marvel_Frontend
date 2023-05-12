@@ -20,6 +20,23 @@
   .character-description {
     font-size: 30px;
   }
+
+  .carousel {
+    width: 75%;
+    height: 100%;
+
+    .react-multi-carousel-item {
+      display: flex;
+    }
+    .character-comics {
+      width: 250px;
+      height: 250px;
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
 .loader,
