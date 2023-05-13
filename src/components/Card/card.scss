@@ -11,6 +11,7 @@
   padding: 10px;
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
+  position: relative;
 
   &:hover {
     cursor: pointer;

@@ -11,7 +11,7 @@ import Column from "../../components/Column";
 import { useState } from "react";
 
 export default function Index() {
-  const [expandedColumn, setExpandedColumn] = useState(null);
+  const [expandedColumn, setExpandedColumn] = useState(0);
   const bandeaux = [SpiderBandeau, IronManBandeau, HulkBandeau, CaptainBandeau];
   const columnsContent = [
     {
