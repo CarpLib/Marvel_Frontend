@@ -17,7 +17,7 @@ export default function Index() {
         // "https://site--marvel--m4zrv4ywn86q.code.run/comics"
         "http://localhost:3000/comics"
       );
-      // console.log(response.data.count);
+      console.log(response.data);
       setCount(response.data.count);
       setDataComics(response.data.results);
     };

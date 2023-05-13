@@ -40,10 +40,9 @@
     padding: 0 20px;
   }
 }
-
 .loader,
 .comics {
-  height: calc(100vh - 100px - 10vh);
+  height: calc(100vh - 100px - 5vh);
   display: flex;
   flex-direction: column;
 }

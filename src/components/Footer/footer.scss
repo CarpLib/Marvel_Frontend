@@ -1,16 +1,11 @@
+$red-color: #ff035b;
+$blue-color: #04d9ff;
 /* FOOTER */
 footer {
-  height: 10vh;
+  height: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: blue;
+  color: white;
   font-size: 25px;
-
-  .red {
-    color: red;
-  }
-  .white {
-    color: white;
-  }
 }

@@ -1,10 +1,18 @@
 import "./home.scss";
 
+// Images
+
+import SpiderBandeau from "../../assets/img/spider_Bandeau.png";
+import IronManBandeau from "../../assets/img/ironMan_bandeau.jpg";
+import HulkBandeau from "../../assets/img/hulk_bandeau.jpg";
+import CaptainBandeau from "../../assets/img/america_bandeau.png";
+
 import Column from "../../components/Column";
 import { useState } from "react";
 
 export default function Index() {
   const [expandedColumn, setExpandedColumn] = useState(null);
+  const bandeaux = [SpiderBandeau, IronManBandeau, HulkBandeau, CaptainBandeau];
   const columnsContent = [
     {
       title: "Univers",
@@ -52,7 +60,7 @@ export default function Index() {
           humour, son utilisation de l'ironie et son penchant pour briser le
           quatrième mur, en particulier avec des personnages comme Deadpool.
         </p>,
-        <p key={6}>
+        <p key={5}>
           En résumé, l'univers Marvel est un monde riche et diversifié, avec une
           histoire qui s'étend sur plusieurs décennies et un large éventail de
           personnages et d'histoires. Que ce soit à travers des{" "}
@@ -255,18 +263,14 @@ export default function Index() {
         setExpandedColumn(null);
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          height: "80vh",
-        }}
-      >
+      <div className="columns-container">
         {columnsContent.map((content, index) => (
           <Column
             key={index}
             isExpanded={expandedColumn === index}
             title={content.title}
             content={content.content}
+            backgroundImage={bandeaux[index]}
             onClick={(event) => {
               event.stopPropagation();
               handleColumnClick(index);

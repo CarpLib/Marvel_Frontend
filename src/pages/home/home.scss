@@ -1,11 +1,7 @@
 .home {
-  //   color: white;
   //Mettre une image en background
   background-image: url("../../assets/img/background.webp");
-  // L'image prend ton le fond et je ne repète pas et qu'elle soit cadré au top*
-  //   background-repeat: no-repeat;
-  //   background-position: top;
-
   background-size: cover;
   //   z-index: -1;
+  height: calc(100vh - 100px - 5vh);
 }
