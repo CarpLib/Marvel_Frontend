@@ -1,3 +1,50 @@
 .favorites {
   color: white;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  height: 100%;
+  h1 {
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .carousel {
+    width: 80%;
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .react-multi-carousel-list {
+      display: flex;
+    }
+    .character {
+      width: 125px;
+      height: 125px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .characters {
+  }
+  .comics {
+  }
+}
+
+.loader,
+.favorites {
+  height: calc(100vh - 100px - 5vh);
+  display: flex;
+  flex-direction: column;
 }
