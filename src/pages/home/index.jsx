@@ -3,8 +3,8 @@ import "./home.scss";
 // Images
 
 import SpiderBandeau from "../../assets/img/spider_bandeau.png";
-import IronManBandeau from "../../assets/img/ironMan_bandeau.jpg";
-import HulkBandeau from "../../assets/img/hulk_bandeau.jpg";
+import IronManBandeau from "../../assets/img/ironMan_bandeau.png";
+import HulkBandeau from "../../assets/img/hulk_bandeau.png";
 import CaptainBandeau from "../../assets/img/america_bandeau.png";
 
 import Column from "../../components/Column";
