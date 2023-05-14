@@ -79,7 +79,7 @@ export default function Index({ infosUser, setInfosUser }) {
         {dataComics.map((comics) => {
           // console.log(comics.thumbnail.path);
           return comics.thumbnail.path !==
-            "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
+            "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
             <Card
               key={comics._id}
               comics={comics}

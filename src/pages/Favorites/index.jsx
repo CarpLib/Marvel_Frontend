@@ -87,7 +87,7 @@ export default function Index({ infosUser, setInfosUser }) {
           // console.log(elem.thumbnail.path);
           return (
             elem.thumbnail.path !==
-              "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
+              "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
               <div key={index} className="character">
                 <img
                   src={`${elem.thumbnail.path}/portrait_incredible.${elem.thumbnail.extension}`}
@@ -109,7 +109,7 @@ export default function Index({ infosUser, setInfosUser }) {
           // console.log(elem.thumbnail.path);
           return (
             elem.thumbnail.path !==
-              "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
+              "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
               <div key={index} className="character">
                 <img
                   src={`${elem.thumbnail.path}/portrait_incredible.${elem.thumbnail.extension}`}
