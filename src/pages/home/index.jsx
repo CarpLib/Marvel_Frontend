@@ -4,7 +4,7 @@ import "./home.scss";
 
 import SpiderBandeau from "../../assets/img/spider_bandeau.png";
 import IronManBandeau from "../../assets/img/ironMan_bandeau.png";
-import HulkBandeau from "../../assets/img/hulk_bandeau.png";
+import HulkBandeau from "../../assets/img/hulk_bandeau.webp";
 import CaptainBandeau from "../../assets/img/america_bandeau.png";
 
 import Column from "../../components/Column";
