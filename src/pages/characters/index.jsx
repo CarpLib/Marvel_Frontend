@@ -36,10 +36,10 @@ export default function Index({ infosUser, setInfosUser }) {
     // console.log(page);
     const fetchData = async () => {
       const response = await axios.get(
-        // `https://site--marvel--m4zrv4ywn86q.code.run/characters?skip=${
-        //   page * 100 - 100
-        // }`
-        `http://localhost:3000/characters?skip=${page * 100 - 100}`
+        `https://site--marvel--m4zrv4ywn86q.code.run/characters?skip=${
+          page * 100 - 100
+        }`
+        // `http://localhost:3000/characters?skip=${page * 100 - 100}`
       );
       // console.log(response.data.results);
       setData(response.data.results);
@@ -52,8 +52,8 @@ export default function Index({ infosUser, setInfosUser }) {
     try {
       const fetchData = async () => {
         const response = await axios.get(
-          "http://localhost:3000/characters"
-          // "https://site--marvel--m4zrv4ywn86q.code.run/characters"
+          // "http://localhost:3000/characters"
+          "https://site--marvel--m4zrv4ywn86q.code.run/characters"
         );
         // console.log(response.data.count);
         setData(response.data.results);
