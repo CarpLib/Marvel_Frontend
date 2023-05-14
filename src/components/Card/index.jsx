@@ -71,7 +71,7 @@ export default function Index({ character, infosUser, setInfosUser }) {
         }}
       >
         {character.thumbnail.path !==
-          "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
+          "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" && (
           <img
             src={`${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}`}
             alt={character.name}
