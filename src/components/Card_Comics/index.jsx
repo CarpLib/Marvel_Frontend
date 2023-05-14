@@ -26,7 +26,7 @@ export default function Index({ comics, infosUser, setInfosUser }) {
         // ajouter l'ID à la fin du tableau
         infosUserClone.favorites[0].comics.push(comics._id);
       }
-
+      // console.log(infosUserClone);
       setInfosUser(infosUserClone);
       // envoi des données au back
       const fetchData = async () => {
