@@ -48,14 +48,14 @@ export default function Index() {
       const fetchData = async () => {
         // Récupération des données du personnage
         const response = await axios.get(
-          `http://localhost:3000/character/${id.id}`
+          `https://site--marvel--m4zrv4ywn86q.code.run/character/${id.id}`
         );
         setData(response.data);
         setIsLoading(false);
 
         // Récupération des données des comics liés au personnage
         const responseComics = await axios.get(
-          `http://localhost:3000/comics/${response.data._id}`
+          `https://site--marvel--m4zrv4ywn86q.code.run/comics/${response.data._id}`
         );
         setDataComics(responseComics.data);
         setIsLoadingComics(false);

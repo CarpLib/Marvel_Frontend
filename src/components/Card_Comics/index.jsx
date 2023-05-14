@@ -31,8 +31,8 @@ export default function Index({ comics, infosUser, setInfosUser }) {
       // envoi des données au back
       const fetchData = async () => {
         const response = await axios.put(
-          // "https://site--marvel--m4zrv4ywn86q.code.run/favorites",
-          "http://localhost:3000/favorites",
+          "https:site--marvel--m4zrv4ywn86q.code.run//favorites",
+          // "http://localhost:3000/favorites",
           infosUserClone,
           {
             headers: {

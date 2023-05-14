@@ -14,8 +14,8 @@ export default function Index({ infosUser, setInfosUser }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(
-        // "https://site--marvel--m4zrv4ywn86q.code.run/comics"
-        "http://localhost:3000/comics"
+        "https://site--marvel--m4zrv4ywn86q.code.run/comics"
+        // "http://localhost:3000/comics"
       );
       // console.log(response.data);
       setCount(response.data.count);
@@ -28,10 +28,10 @@ export default function Index({ infosUser, setInfosUser }) {
     // console.log(page);
     const fetchData = async () => {
       const response = await axios(
-        // `https://site--marvel--m4zrv4ywn86q.code.run/comics?skip=${
-        //   page * 100 - 100
-        // }`
-        `http://localhost:3000/comics?skip=${page * 100 - 100}`
+        `https://site--marvel--m4zrv4ywn86q.code.run/comics?skip=${
+          page * 100 - 100
+        }`
+        // `http://localhost:3000/comics?skip=${page * 100 - 100}`
       );
       // console.log(response.data.results);
       setDataComics(response.data.results);
@@ -45,8 +45,8 @@ export default function Index({ infosUser, setInfosUser }) {
     // console.log(value);
     const fetchData = async () => {
       const response = await axios.get(
-        `http://localhost:3000/comics?title=${value}`
-        // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
+        // `http://localhost:3000/comics?title=${value}`
+        `https://site--marvel--m4zrv4ywn86q.code.run/comics?title=${value}`
       );
       // console.log(response.data);
       setData(response.data.results);

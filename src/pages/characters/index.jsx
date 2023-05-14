@@ -20,8 +20,8 @@ export default function Index({ infosUser, setInfosUser }) {
       // console.log(value);
       const fetchData = async () => {
         const response = await axios.get(
-          `http://localhost:3000/characters?name=${value}`
-          // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
+          // `http://localhost:3000/characters?name=${value}`
+          `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
         );
         // console.log(response.data);
         setData(response.data.results);

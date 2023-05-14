@@ -45,8 +45,8 @@ function App() {
       try {
         const fetchData = async () => {
           const response = await axios.get(
-            // `https://marvel-backend-jm.herokuapp.com/favorites/${infosUser.id}`,
-            `http://localhost:3000/favorites/`,
+            `https://site--marvel--m4zrv4ywn86q.code.run/favorites/`,
+            // `http://localhost:3000/favorites/`,
             {
               headers: {
                 Authorization: `Bearer ${token}`,

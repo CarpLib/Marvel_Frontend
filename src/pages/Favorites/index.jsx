@@ -12,7 +12,10 @@ export default function Index({ infosUser, setInfosUser }) {
 
   const fetchDataCharacter = async (id) => {
     // Récupération des données du personnage
-    const response = await axios.get(`http://localhost:3000/character/${id}`);
+    const response = await axios.get(
+      `https://site--marvel--m4zrv4ywn86q.code.run/character/${id}`
+      // `http://localhost:3000/character/${id}`
+    );
     // console.log(response.data);
     const dataClone = [...data];
     dataClone[1].characters.push(response.data);
@@ -22,7 +25,10 @@ export default function Index({ infosUser, setInfosUser }) {
 
   const fetchDataComics = async (id) => {
     // Récupération des données du personnage
-    const response = await axios.get(`http://localhost:3000/comic/${id}`);
+    const response = await axios.get(
+      `https://site--marvel--m4zrv4ywn86q.code.run/comic/${id}`
+      // `http://localhost:3000/comic/${id}`
+    );
     // console.log(response.data);
     const dataClone = [...data];
     dataClone[0].comics.push(response.data);
