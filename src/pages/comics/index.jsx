@@ -5,7 +5,7 @@ import Card from "../../components/Card_Comics";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css"; // Importer le CSS pour la pagination
 
-export default function Index() {
+export default function Index({ infosUser, setInfosUser }) {
   const [data, setData] = useState([]);
   const [dataComics, setDataComics] = useState([]);
   const [count, setCount] = useState(0);
@@ -17,7 +17,7 @@ export default function Index() {
         // "https://site--marvel--m4zrv4ywn86q.code.run/comics"
         "http://localhost:3000/comics"
       );
-      console.log(response.data);
+      // console.log(response.data);
       setCount(response.data.count);
       setDataComics(response.data.results);
     };
@@ -49,7 +49,7 @@ export default function Index() {
         // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
       );
       // console.log(response.data);
-      setData(response.data);
+      setData(response.data.results);
       setDataComics(data);
     };
     fetchData();
@@ -80,7 +80,12 @@ export default function Index() {
           // console.log(comics.thumbnail.path);
           return comics.thumbnail.path !==
             "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? (
-            <Card key={comics._id} comics={comics} />
+            <Card
+              key={comics._id}
+              comics={comics}
+              setInfosUser={setInfosUser}
+              infosUser={infosUser}
+            />
           ) : null;
         })}
       </div>

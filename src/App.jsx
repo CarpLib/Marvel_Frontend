@@ -17,31 +17,56 @@ import Login from "./pages/login/index";
 // FontAwasome
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faHeart,
   faEnvelope,
   faKey,
   faListAlt,
   faThumbsUp,
+  faBookmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Cookies from "js-cookie";
-library.add(faEnvelope, faKey, faListAlt, faThumbsUp);
+import axios from "axios";
+library.add(faEnvelope, faKey, faListAlt, faThumbsUp, faHeart, faBookmark);
 
 function App() {
   const [infosUser, setInfosUser] = useState({
     token: "",
     id: "",
     username: "",
-    favoritesCharacters: [],
+    favorites: [{ comics: [] }, { characters: [] }],
   });
 
-  const cookie = Cookies.get("Marvel");
-  if (cookie && !infosUser.token) {
-    const token = cookie;
-    const infosUserClone = { ...infosUser };
-    infosUserClone.token = token;
-    setInfosUser(infosUserClone);
-  }
+  useEffect(() => {
+    const token = Cookies.get("Marvel");
+    // console.log(token);
+    if (token) {
+      try {
+        const fetchData = async () => {
+          const response = await axios.get(
+            // `https://marvel-backend-jm.herokuapp.com/favorites/${infosUser.id}`,
+            `http://localhost:3000/favorites/`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+          // console.log(response.data);
+          const infosUserClone = { ...infosUser };
+          infosUserClone.token = token;
+          infosUserClone.id = response.data._id;
+          infosUserClone.username = response.data.account.username;
+          infosUserClone.favorites = response.data.favorites;
+          setInfosUser(infosUserClone);
+        };
+        fetchData();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  }, []);
 
   return (
     <div className="App">
@@ -61,9 +86,24 @@ function App() {
               <Login infosUser={infosUser} setInfosUser={setInfosUser} />
             }
           />
-          <Route path="/characters" element={<Characters />} />
-          <Route path="/comics" element={<Comics />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route
+            path="/characters"
+            element={
+              <Characters infosUser={infosUser} setInfosUser={setInfosUser} />
+            }
+          />
+          <Route
+            path="/comics"
+            element={
+              <Comics infosUser={infosUser} setInfosUser={setInfosUser} />
+            }
+          />
+          <Route
+            path="/favorites"
+            element={
+              <Favorites infosUser={infosUser} setInfosUser={setInfosUser} />
+            }
+          />
           <Route path="/character/:id" element={<Character />} />
         </Routes>
         <Footer />

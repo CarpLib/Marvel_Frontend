@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 
 export default function Header({ infosUser, setInfosUser }) {
   const navigate = useNavigate();
+  const token = Cookies.get("Marvel");
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -12,6 +13,7 @@ export default function Header({ infosUser, setInfosUser }) {
     infosUserClone.token = "";
     infosUserClone.id = "";
     infosUserClone.username = "";
+    infosUserClone.favorites = [{ comics: [] }, { characters: [] }];
     setInfosUser(infosUserClone);
     Cookies.remove("Marvel");
     navigate("/");
@@ -34,7 +36,7 @@ export default function Header({ infosUser, setInfosUser }) {
             <p>Favoris</p>
           </Link>
         </nav>
-        {infosUser.token ? (
+        {token ? (
           <div className="disconnected">
             <button className="btn-2" onClick={handleClick}>
               Se Déconnecter

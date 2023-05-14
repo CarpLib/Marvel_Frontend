@@ -8,6 +8,7 @@ export default function Index({ infosUser, setInfosUser }) {
     username: "",
     email: "",
     password: "",
+    favorites: [{ comics: [] }, { characters: [] }],
   });
   const [error, setError] = useState({
     username: false,

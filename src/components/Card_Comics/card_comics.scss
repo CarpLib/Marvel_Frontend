@@ -10,12 +10,12 @@
   justify-content: flex-end;
   padding: 10px;
   box-sizing: border-box;
-  transition: transform 0.3s ease-in-out;
+  position: relative;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.5);
-    border: 1px solid black;
+
+    border: 3px solid black;
 
     h2 {
       display: none;
@@ -35,6 +35,25 @@
     font-size: 20px;
     text-align: center;
     color: black;
+  }
+
+  .favorite {
+    // border: 2px solid red;
+    font-size: 1.8rem;
+    color: black;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -10px;
+    right: 0;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   .block-description {

@@ -5,8 +5,10 @@ import FadeLoader from "react-spinners/FadeLoader";
 import Card from "../../components/Card";
 import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css"; // Importer le CSS pour la pagination
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function Index() {
+export default function Index({ infosUser, setInfosUser }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +24,7 @@ export default function Index() {
           // `https://site--marvel--m4zrv4ywn86q.code.run/characters?name=${value}`
         );
         // console.log(response.data);
-        setData(response.data);
+        setData(response.data.results);
       };
       fetchData();
     } catch (error) {
@@ -88,7 +90,14 @@ export default function Index() {
       />
       <div className="characters-list">
         {data.map((character) => {
-          return <Card key={character._id} character={character} />;
+          return (
+            <Card
+              key={character._id}
+              character={character}
+              setInfosUser={setInfosUser}
+              infosUser={infosUser}
+            />
+          );
         })}
       </div>
     </div>

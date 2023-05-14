@@ -54,12 +54,13 @@ export default function Index({ infosUser, setInfosUser }) {
       infosUserClone.token = response.data.token;
       infosUserClone.id = response.data._id;
       infosUserClone.username = response.data.account.username;
+      infosUserClone.favorites = response.data.favorites;
 
       const cookie = Cookies.get("Marvel");
       if (cookie) {
         Cookies.remove("Marvel");
       }
-
+      // console.log(infosUserClone);
       setInfosUser(infosUserClone);
       Cookies.set("Marvel", response.data.token, { expires: 14 });
       navigate("/");
