@@ -17,7 +17,7 @@ export default function Column({
   backgroundImage,
 }) {
   const style = useSpring({
-    width: isExpanded ? "71%" : "6%",
+    width: isExpanded ? "71%" : "7%",
     from: { width: "5%", height: "100%" },
     backgroundColor: isExpanded ? "blue" : "red",
     borderColor: "white",

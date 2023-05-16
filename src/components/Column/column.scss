@@ -64,3 +64,50 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .columns-container {
+    .column {
+      .content {
+        margin: 0 15px;
+        font-size: 1.1rem;
+
+        .picture-line {
+          .pictures {
+            height: 70px;
+          }
+        }
+
+        .bold-txt {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .columns-container {
+    .column {
+      h1 {
+        font-size: 1.1rem;
+      }
+      .content {
+        margin: 0 15px;
+        font-size: 0.7rem;
+        .picture {
+          width: 100px;
+        }
+
+        .picture-line {
+          .pictures {
+            height: 30px;
+          }
+        }
+
+        .bold-txt {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
